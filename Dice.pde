@@ -44,7 +44,7 @@ void draw() {
       text(countSecs, 200, 350);
       countSecs--;
 
-    textSize(25);
+    textSize(19);
     if (countSecs < 0) {
       runFinished = true;
       //System.out.println("You got a sum of " + sum + "!");
@@ -53,15 +53,14 @@ void draw() {
       fill(0);
       text("You got a sum of: " + sum, 200, 330);
       if (sum == 180) {
-        text("Now THAT'S a high score!! ", 200, 360);
+        text("Now THAT'S a high score!! (˵ •̀ ᴗ - ˵) ✧", 200, 360);
         counter++;
       } else if (sum > 130) {
       } else if (sum > 110) {
-        text("Wow, that's pretty good!", 200, 360);
+        text("Wow, that's pretty good! (˶˃ ᵕ ˂˶)", 200, 360);
         counter++;
       } else {
-        textSize(19);
-        text("That's kinda high ? (maybe try again..)!", 200, 360);
+        text("You can do better! Try again!!! ᕙ(⇀‸↼‶)ᕗ", 200, 360);
         counter++;
       }
     }
