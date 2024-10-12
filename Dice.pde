@@ -8,6 +8,7 @@ boolean runOnce = true;
 int countSecs = 3;
 int[] bgColor = {255, 236, 194};
 boolean runFinished = false;
+int colorSwitch = (int)(Math.random()*2);
 
 void setup() {
   size(400, 400);
@@ -30,7 +31,7 @@ void draw() {
   }
   //System.out.println("Current time in sec: " + second());
   currentTime = second();
-  if (currentTime > previousTime) {
+  if (currentTime != previousTime) {
       currentTime = second();
       //System.out.println("A second has passed!");
       previousTime = second();
@@ -76,6 +77,7 @@ void mousePressed() {
       fill(bgColor[0], bgColor[1], bgColor[2]);
       rect(20, 320, 400, 100);
       stroke(0);
+      colorSwitch = (int)(Math.random()*2);
   redraw();
   
   }
@@ -118,13 +120,21 @@ class Dice {
   }
 
   void show() {
-    fill(255, 214, 228);
+    if(colorSwitch == 0) {
+      fill(255);
+    } else {
+      fill(24, 173, 171);
+    }
     rect(myX, myY, 50, 50, 8, 8, 8, 8);
-    fill(255);
   }
 
   void showFace() {
     // faces of each die
+    if(colorSwitch == 0) {
+      fill(24, 173, 171);
+    } else {
+      fill(255);
+    }
     if (face == 6) {
       sum+= 6;
       for (int y = 1; y < 4; y++) {
